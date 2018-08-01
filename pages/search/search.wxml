@@ -1,0 +1,101 @@
+<view class='search-warp'>
+  <view class='search'>
+    <view class='{{searchActive}}'>
+      <input placeholder="{{placeholder}}" placeholder-class="inputph" selection-start="10" bindfocus="search" bindblur='blurSearch' value='{{searchvalue}}' bindinput="changeSearchValue"></input>
+      <image src='../../images/search.png' class='search-img'></image>
+    </view>
+    <text class='cancel-search' wx:if="{{searchCancel}}" bindtap='searchCancle'>取消</text>
+  </view>
+</view>
+
+<view class='result-warp' wx:if="{{searchFlag || resultFlag}}">
+  <view class='search-preview' hidden='{{!searchvalue}}' wx:if="{{recomment}}" bindtap='searchSong'>搜索　"{{searchvalue}}"</view>
+  <view class='search-suggest' hidden='{{!searchvalue}}' wx:if="{{recomment}}" bindtap='searchSong'>
+    <view class='search-suggest-item' hidden='{{!searchvalue}}' wx:if="{{recomment}}" bindtap='searchSong' wx:for="{{suggestList.songs}}" wx:key="*this" catchtap='suggestSearch' data-name="{{item.name}}">
+      <image src='../../images/search02.png'></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+
+  <block wx:if="{{searchFlag}}">
+    <view class='hot-singer' wx:if="{{!searchvalue}}">
+      <image src='../../images/icon_03.png' class='singer-user'></image>
+      <text>歌手分类</text>
+      <image src='../../images/icon_06.png' class='singer-arrow'></image>
+    </view>
+    <view class='hot-search' wx:if="{{!searchvalue}}">
+      <view class='hot-search-title'>
+        热门搜索
+      </view>
+      <view class='hot-search-box'>
+        <view class='hot-search-item' wx:for="{{hotList}}">
+          {{item.first}}
+        </view>
+      </view>
+    </view>
+
+    <view class='history-search' wx:if="{{!searchvalue}}">
+      <view class='history-search-item' wx:for="{{historyList}}">
+        <view class='history-search-title'>
+          <image src='../../images/icon_11.png' class='history-icon'></image>
+          <text>{{item}}</text>
+        </view>
+        <view class='history-search-detele'>
+          <image src='../../images/icon_14.png' class='detele-icon' bindtap='deteleHistory' data-id='{{index}}'></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 1: 单曲 10: 专辑 100: 歌手 1000: 歌单 1002: 用户 1004: MV 1006: 歌词 1009: 电台 -->
+  <block wx:if="{{resultFlag}}">
+    <view class="page search-result-warp">
+      <view class="page__bd">
+        <view class="weui-tab">
+          <view class="weui-navbar search-navbar">
+            <block wx:for="{{tabs}}" wx:key="*this">
+              <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title">{{item}}</view>
+              </view>
+            </block>
+            <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+          </view>
+          <view class="weui-tab__panel">
+            <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+              <text class='searchNone' wx:if="{{songList.songCount==0}}">无结果</text>
+              <Searchsong searchsong="{{songList}}"></Searchsong>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+              <text class='searchNone' wx:if="{{songList.albumCount==0}}">无结果</text>
+              <searchSpecial searchsong="{{songList}}"></searchSpecial>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+              <text class='searchNone' wx:if="{{songList.artistCount==0}}">无结果</text>
+              <searchSinger searchsong="{{songList}}"></searchSinger>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+              <text class='searchNone' wx:if="{{songList.playlistCount==0}}">无结果</text>
+              <searchSongList searchsong="{{songList}}"> </searchSongList>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 4}}">
+              <text class='searchNone' wx:if="{{songList.userprofileCount==0}}">无结果</text>
+              <searchUser searchsong="{{songList}}"></searchUser>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 5}}">
+              <text class='searchNone' wx:if="{{songList.mvCount==0}}">无结果</text>
+              <searchMv searchsong="{{songList}}"></searchMv>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 6}}">
+              <text class='searchNone'  wx:if="{{songList.songCount==0}}">无结果</text>
+              <searchWords searchsong="{{songList}}"></searchWords>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 7}}">
+              <text class='searchNone' wx:if="{{songList.djRadiosCount==0}}">无结果</text>
+              <searchRadio searchsong="{{songList}}"></searchRadio>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

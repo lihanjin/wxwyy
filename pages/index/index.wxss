@@ -1,0 +1,83 @@
+/**index.wxss**/
+
+.list-shortcut {
+  position: fixed;
+  top: 200rpx;
+  width: 70rpx;
+  right: 6rpx;
+  text-align: center;
+  overflow: auto;
+}
+
+.list-shortcut::-webkit-scrollbar {
+  display: none;
+}
+
+.list-shortcut text {
+  padding: 20rpx;
+  line-height: 1;
+  color: #757575;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.singer-warp {
+  height: 120rpx;
+  padding: 10rpx 0;
+  margin: 0 10rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.singer-warp image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 6rpx;
+}
+
+.singer-warp text {
+  margin-left: 40rpx;
+  font-size: 28rpx;
+}
+
+.singerList-letter {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left: 24rpx;
+  margin-bottom: 20rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 22rpx;
+}
+
+page .weui-navbar {
+  color: #fff;
+  position: fixed;
+  background: #d44439;
+  top: 70rpx;
+}
+
+page .weui-navbar {
+  border: none;
+}
+
+.weui-navbar__title {
+  color: #fff;
+}
+
+page .weui-tab__panel {
+  padding-top: 171rpx;
+}
+
+.weui-navbar__slider {
+  bottom: 20rpx;
+  width: 30rpx;
+  background: #fff;
+  height: 2px;
+}
+
+.weui-tab__panel {
+  overflow: hidden;
+}
+

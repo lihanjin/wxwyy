@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/personalized/index",
+    "pages/rank/rank",
+    "pages/ranklist/ranklist",
+    "pages/songdetail/songdetail",
+    "pages/singerdetail/singerdetail",
+    "pages/search/search",
+    "pages/Searchsong/Searchsong",
+    "pages/searchSpecial/searchSpecial",
+    "pages/searchSinger/searchSinger",
+    "pages/searchSongList/searchSongList",
+    "pages/searchUser/searchUser",
+    "pages/searchMv/searchMv",
+    "pages/searchRadio/searchRadio",
+    "pages/player/player",
+    "pages/audio/audio",
+    "pages/text/text"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#d44439",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

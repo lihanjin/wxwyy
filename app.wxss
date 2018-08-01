@@ -1,0 +1,26 @@
+/**app.wxss**/
+@import './style/weui.wxss';
+
+.container {
+  background: #f2f3f4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+page {
+  font-size: 32rpx;
+  font-family: PingFang SC, STHeitiSC-Light, Helvetica-Light, arial, sans-serif;
+  background: #f2f3f4;
+  color: #2e3030;
+}
+.border-b{
+  border-bottom:1px solid #e4e4e4;
+}
+

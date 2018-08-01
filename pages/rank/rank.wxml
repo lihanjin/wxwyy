@@ -1,0 +1,54 @@
+<!--pages/rank/rank.wxml-->
+<view class='rank-box'>
+  <view class='rank-item' wx:for="{{rankList}}">
+    <view bindtap="goRanklist" data-id="{{item.rankId}}">
+      <image src='{{item.coverImgUrl}}' ></image>
+      <view class='song-list'>
+        <view class='rank-song-item' wx:for="{{item.tracks}}" wx:for-item="song" wx:for-index="idx">{{idx+1}}.{{song.name}}-{{song.ar[0].name}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class='rank-item'>
+    <image src='http://p1.music.126.net/N2HO5xfYEqyQ8q6oxCw8IQ==/18713687906568048.jpg'></image>
+    <view class='song-list'>
+      <view class='rank-song-item'></view>
+    </view>
+  </view>
+
+  <view class='rank-item'>
+    <image src='http://p1.music.126.net/RChr5NydlXafIV1GVEHJdg==/19073228207465342.jpg'></image>
+    <view class='song-list'>
+      <view class='rank-song-item'></view>
+    </view>
+  </view>
+
+  <view class='rank-item'>
+    <image src='http://p1.music.126.net/GhhuF6Ep5Tq9IEvLsyCN7w==/18708190348409091.jpg'></image>
+    <view class='song-list'>
+      <view class='rank-song-item'></view>
+    </view>
+  </view>
+
+  <view class='rank-item'>
+    <image src='http://p1.music.126.net/qN-sDLqehN1oHGyov-0EZw==/109951163068669685.jpg'></image>
+    <view class='song-list'>
+      <view class='rank-song-item'></view>
+    </view>
+  </view>
+
+  <view class='rank-item'>
+    <image src='http://p1.music.126.net/sBzD11nforcuh1jdLSgX7g==/18740076185638788.jpg'></image>
+    <view class='song-list'>
+      <view class='rank-song-item'></view>
+    </view>
+  </view>
+
+  <view class='rank-item'>
+    <image src='http://p1.music.126.net/vttjtRjL75Q4DEnjRsO8-A==/18752170813539664.jpg'></image>
+    <view class='song-list'>
+      <view class='rank-song-item'></view>
+    </view>
+  </view> -->
+</view>

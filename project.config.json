@@ -1,0 +1,61 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wx08e379fcb118906a",
+	"projectname": "smwyy1.0",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "ranklist",
+					"pathName": "pages/ranklist/ranklist",
+					"query": "item=1"
+				},
+				{
+					"id": 1,
+					"name": "songdetail",
+					"pathName": "pages/songdetail/songdetail",
+					"query": "id=2246363445"
+				},
+				{
+					"id": 2,
+					"name": "player",
+					"pathName": "pages/player/player",
+					"query": "id=562592265&name=like that&img=http://p1.music.126.net/rnIoOdEStcFPBpD-37x4pA==/109951163302871949.jpg&artists=吴亦凡&blur=http://p1.music.126.net/rnIoOdEStcFPBpD-37x4pA==/109951163302871949.jpg"
+				},
+				{
+					"id": 3,
+					"name": "text",
+					"pathName": "pages/text/text",
+					"query": "id=24381616"
+				}
+			]
+		}
+	}
+}

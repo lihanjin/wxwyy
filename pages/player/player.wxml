@@ -1,0 +1,33 @@
+<!--pages/player/player.wxml-->
+<view class='play-warp'>
+  <view class='fillter'></view>
+  <image src='{{singerDetail.album.blurPicUrl}}'></image>
+</view>
+<view class='middle'>
+  <view class='m-song'>
+    <view class='m-song-turn '>
+      <view class='m-song-rollwrap  rotate ' style=' {{pause?"animation-play-state: paused;":""}} '>
+        <image src='{{singerDetail.album.picUrl}}'></image>
+      </view>
+      <view class='m-song-lgour  rotate' style=' {{pause?"animation-play-state: paused;":""}} '>
+        <view class='m-song-light'></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='footer'>
+
+  <image src='../../images/img/random.png' class='random-icon' wx:if='{{random}}' catchtap='random'></image>
+  <image src='../../images/img/loop.png' class='random-icon' wx:if='{{one}}' catchtap='one'></image>
+  <image src='../../images/img/one.png' class='random-icon' wx:if='{{loop}}' catchtap='loop'></image>
+
+  <image src='../../images/img/previous.png' class='previous-icon' catchtap='previous'></image>
+  <image src='../../images/img/pause.png' class='pause-icon' catchtap="audioPause" wx:if='{{!pause}}'></image>
+  <image src='../../images/img/player.png' class='player-icon pause-icon pause' catchtap="audioPlay" wx:if='{{pause}}'></image>
+  <image src='../../images/img/next.png' class='next-icon' catchtap='next'></image>
+  <image src='../../images/menu.png' class='menu-icon' catchtap='openlist'></image>
+
+</view>
+
+  <audios  id="audio"  bind:changePlay="_changePlay"></audios>

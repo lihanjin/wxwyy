@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "audios": "../audio/audio"
+  }
+}

@@ -1,0 +1,160 @@
+/* pages/player/player.wxss */
+
+.play-warp {
+  overflow: hidden;
+  position: fixed;
+  left: -50%;
+  top: -50%;
+  width: 300%;
+  height: 300%;
+  z-index: -1;
+  opacity: 0.6;
+  -webkit-filter: blur(30px);
+  filter: blur(30px);
+}
+
+.m-song-rollwrap {
+  position: absolute;
+  width: 368rpx;
+  height: 368rpx;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin-left: -184rpx;
+  margin-top: -184rpx;
+}
+
+.play-warp image {
+  width: 100%;
+  height: 100%;
+}
+
+.fillter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+}
+
+.middle {
+  width: 100%;
+  margin-top: 140rpx;
+  height: 592rpx;
+}
+
+.m-song {
+  width: 592rpx;
+  height: 592rpx;
+  margin: 0 auto;
+  position: relative;
+}
+
+.m-song-turn {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.m-song image {
+  width: 100%;
+  height: 100%;
+}
+
+.m-song-turn:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  background: url(http://s3.music.126.net/m/s/img/disc-ip6.png?69796123ad7cfe95781ea38aac8f2d48) no-repeat;
+  background-size: contain;
+}
+
+.m-song-lgour {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.m-song-light {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  background: url(http://s3.music.126.net/m/s/img/disc_light-ip6.png?996fc8a2bc62e1ab3f51f135fc459577) no-repeat;
+  background-size: contain;
+}
+
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.pause {
+  animation-play-state: paused;
+}
+
+.pause-icon {
+  width: 92rpx;
+  height: 92rpx;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 20%;
+  height: 92rpx;
+  padding: 0 35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.random-icon {
+  width: 46rpx;
+  height: 41rpx;
+}
+
+.menu-icon {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.next-icon {
+  width: 49rpx;
+  height: 51rpx;
+}
+
+.previous-icon {
+  width: 48rpx;
+  height: 51rpx;
+}
+
+
+.player-menu audio {
+  opacity: 0
+}
+
+.audio{
+  /* opacity: 0; */
+}
+.audio-pos {
+  opacity: 0;
+}

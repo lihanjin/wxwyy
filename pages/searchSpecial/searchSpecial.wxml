@@ -1,0 +1,16 @@
+<!--pages/Searchsong/Searchsong.wxml-->
+<view class='searchSong-warp'>
+  <view class='searchSong' wx:for="{{searchsong.albums}}" wx:key="*this">
+    <view class='searchSong-images-cover'>
+      <image src='{{item.picUrl}}' class='singerImg'></image>
+    </view>
+    <view class='searchSong-title-warp'>
+      <view class='searchSong-title'>{{item.name}}</view>
+      <view class='searchSong-artists-warp'>
+        <view class='searchSong-artists' wx:for="{{item.artists}}" wx:for-item="itemName" wx:for-index="idx" wx:key="*this">{{itemName.name}}
+          <text wx:if="{{item.artists.length-1!=idx}}">/</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

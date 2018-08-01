@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container">
+  <search/>
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this" >
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <personalized wx:if="{{activeIndex == 0}}"/>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <rank wx:if="{{activeIndex == 1}}"/>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <scroll-view scroll-y style="height:{{scrollHeight}}px" scroll-into-view="{{scrollId}}" scroll-top="100">
+              <view class='singerList' id="hot">
+                <view class='singerList-letter'>
+                  热门
+                </view>
+                <view class='singerList-detail'>
+                  <view class='singer-warp' wx:for="{{hotList}}" bindtap='goSingerDetail' data-id='{{item.id}}' wx:key="*this">
+                    <image src='{{item.picUrl}}'></image>
+                    <text>{{item.name}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class='singerList' wx:for="{{letterList}}" id="{{item[0]}}" wx:key="*this">
+                <view class='singerList-letter' wx:if="{{item[1]}}">
+                  {{item[0]}}
+                </view>
+                <view class='singerList-detail'>
+                  <view class='singer-warp' wx:for="{{letterList[index]}}" wx:for-index="idx" wx:for-item="itemName" wx:if="{{idx!=0}}" wx:key="*this">
+                    <image src='{{itemName.picUrl}}'></image>
+                    <text>{{itemName.name}}</text>
+                  </view>
+                </view>
+              </view>
+            </scroll-view>
+
+            <view class='list-shortcut'>
+              <text class='hot' bindtap='hot'>热</text>
+              <text wx:for="{{letterList}}" wx:if="{{item[1]}}" bindtap='changeScrollId' data-id='{{item[0]}}' wx:key="*this"> {{item[0]}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+  <audios></audios>

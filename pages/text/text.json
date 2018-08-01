@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "personalized": "../personalized/index",
+    "rank": "../rank/rank",
+    "search": "../search/search",
+    "audios": "../audio/audio"
+  }
+}

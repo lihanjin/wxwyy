@@ -1,0 +1,17 @@
+<!--pages/Searchsong/Searchsong.wxml-->
+<view class='searchSong-warp'>
+  <view class='searchSong' wx:for="{{searchsong.userprofiles}}" wx:key="*this">
+    <view bindtap='goSingerDetail' data-id="{{item.id}}">
+      <image src='{{item.avatarUrl}}' class='singerImg'></image>
+      <view class='searchSong-title-warp'>
+        <view class='searchSong-title'>{{item.nickname}}</view>
+         <view class='searchSong-artists-warp' wx:if='{{item.signature}}'>
+        <view class='searchSong-artists' >
+        {{item.signature}}
+          <!-- <text> by {{item.creator.nickname}},播放{{itme.playCount}}次</text> -->
+        </view>
+      </view> 
+      </view>
+    </view>
+  </view>
+</view>

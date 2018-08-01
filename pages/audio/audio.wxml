@@ -1,0 +1,48 @@
+<!--pages/audio/audio.wxml-->
+<view class='audio-pos' wx:if="{{playList.length>0}}">
+  <view class='audio-warp' style='{{audioFlag}}'>
+    <!-- <audio poster="{{singerDetail.album.blurPicUrl}}" name="{{singerDetail.name}}" author="{{singerDetail.artists[0].name}}" src="{{song.url}}" id="Audio" controls loop="{{one}}" bindended="end"></audio> -->
+    <view class='audio'>
+      <view class='audio-imgbox'>
+        <image src='{{singerDetail.album.blurPicUrl}}' class='song-img'></image>
+        <image src='../../images/img/pause.png' class='pause-icon' catchtap="audioPause" wx:if='{{!pause}}'></image>
+        <image src='../../images/img/player.png' class='player-icon pause-icon pause' catchtap="audioPlay" wx:if='{{pause}}'></image>
+      </view>
+      <view class='album'>
+        <view class='song-name'>{{singerDetail.name}}</view>
+        <view class='author'>{{singerDetail.artists[0].name}}</view>
+      </view>
+      <view class='audio-time'> {{time}}</view>
+    </view>
+    <view class='audio-menu' bindtap='openlist'>
+      <image src='../../images/menu.png'></image>
+    </view>
+    <view class='close-audio'>
+      <view class='close-audio-left' wx:if='{{arrow}}' catchtap='closeAudio'>
+
+      </view>
+      <view class='close-audio-right' wx:if='{{!arrow}}' catchtap='openAudio'>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='list-warp' style='{{listFlag}}'>
+    <view class='list-header border-b'>
+      <image src='../../images/list/random.png' class='random-icon' wx:if='{{random}}' catchtap='random'></image>
+      <image src='../../images/list/loop.png' class='random-icon' wx:if='{{loop}}' catchtap='loop'></image>
+      <image src='../../images/list/one.png' class='random-icon' wx:if='{{one}}' catchtap='one'></image>
+      <text>随机播放</text>
+      <image src='../../images/list/clear.png' class='random-icon'></image>
+    </view>
+    <view class='list-content-warp'>
+      <view class='list-content border-b' wx:for="{{playList}}" bindtap='changePlay' data-id='{{index}}'>
+        <image src='../../images/list/sound.png' class='list-content-icon' wx:if="{{nowList.id==item.id}}"></image>
+        <text class='songName'>{{item.name}}</text>
+        <image src='../../images/list/delete.png' class='list-delete-icon' catchtap='deleteSong' data-id="{{index}}"></image>
+      </view>
+    </view>
+    <view class='list-close' bindtap='closeList'>关闭</view>
+  </view>
+  <view class='bg-warp' wx:if="{{bgFlag}}" bindtap='closeList'></view>
+</view>

@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Searchsong": "../Searchsong/Searchsong",
+    "searchSpecial": "../searchSpecial/searchSpecial",
+    "searchSinger": "../searchSinger/searchSinger",
+    "searchSongList": "../searchSongList/searchSongList",
+    "searchUser": "../searchUser/searchUser",
+    "searchMv": "../searchMv/searchMv",
+    "searchWords": "../searchWords/searchWords",
+    "searchRadio": "../searchRadio/searchRadio"
+  }
+}

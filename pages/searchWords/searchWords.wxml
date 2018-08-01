@@ -1,0 +1,16 @@
+<!--pages/Searchsong/Searchsong.wxml-->
+<view class='searchSong-warp'>
+  <view class='searchSong' wx:for="{{searchsong.songs}}" wx:key="*this">
+    <view bindtap='goSingerDetail' data-id="{{item.id}}">
+      <image src='{{item.artists[0].img1v1Url}}' class='singerImg'></image>
+      <view class='searchSong-title-warp'>
+        <view class='searchSong-title'>{{item.name}}</view>
+         <view class='searchSong-artists-warp'>
+        <view class='searchSong-artists' >
+          <!-- <text> {{item.lyrics.txt}}</text> -->
+        </view>
+      </view> 
+      </view>
+    </view>
+  </view>
+</view>

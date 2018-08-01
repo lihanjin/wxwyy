@@ -1,0 +1,51 @@
+/* pages/Searchsong/Searchsong.wxss */
+
+.searchSong {
+  position: relative;
+  border-bottom: 1px solid #e4e4e4;
+  height: 110rpx;
+  margin-left: 120rpx;
+  /* padding-top: 20rpx; */
+}
+
+.searchSong-title {
+  color: #36c;
+  font-size: 28rpx;
+}
+
+.searchSong-artists-warp {
+  display: flex;
+  flex-direction: row;
+  color: #999;
+  font-size: 24rpx;
+}
+.searchSong-warp {
+  overflow: auto;
+  height:1270rpx;
+
+}
+.singerImg {
+  position: relative;
+  top: 10rpx;
+  left: 2rpx;
+  width: 83rpx;
+  height: 83rpx;
+}
+
+.searchSong-title-warp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10rpx;
+}
+
+.searchSong-images-cover {
+  position: absolute;
+  left: -110rpx;
+  top: 10rpx;
+  background: url(http://s2.music.126.net/style/web2/img/coverall.png?bd73b7e344abfd75e339555200fa5e27) no-repeat;
+  width: 110rpx;
+  height: 110rpx;
+  background-position: -480rpx -644rpx;
+  z-index: 1000;
+}

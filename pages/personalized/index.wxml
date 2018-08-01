@@ -1,0 +1,39 @@
+<!--pages/personalized/index.wxml-->
+<view class='swiper-box'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previous}}" current='{{current}}' bindchange='change' circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item.picUrl}}" class="{{index!=current?'scaleimg':' '}}" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='personalized'>
+  <view class='personalized-title'>推荐歌单</view>
+  <view class='personalized-box'>
+    <view class='personalized-item' wx:for="{{alizedList}}" wx:key="*this">
+      <navigator url='/pages/songdetail/songdetail?id={{item.id}}'>
+        <image src='{{item.picUrl}}'></image>
+        <text>{{item.name}}</text>
+        <view class='hotNum'>{{item.playCount}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view class='personalized newsong-list'>
+  <view class='personalized-title'>最新音乐</view>
+  <view class='newsMusic-box' wx:for="{{newSong}}" wx:key="*this">
+    <view class='newsMusic-list'>
+      <view class='newsMusic-title'>
+        {{item.name}}
+      </view>
+      <view class='newsMusic-info'>
+        <view class='newsong-sq' wx:if="{{item.sqhot}}"></view>{{item.ar[0].name}} - {{item.name}}
+      </view>
+    </view>
+    <view class='newsMusic-play'>
+
+    </view>
+  </view>
+</view>

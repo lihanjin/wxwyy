@@ -1,0 +1,34 @@
+<!--pages/ranklist/ranklist.wxml-->
+<view class='ranklist-box'>
+  <view class='ranklist-banner'>
+    <view class='banneropcity'>
+      <view class='rankName'>{{rankList.name}}</view>
+      <view class='rankTime'>最近更新:{{rankList.updateTime}}</view>
+    </view>
+    <image src='{{rankList.coverImgUrl}}'></image>
+  </view>
+  <view class='songList'>
+    <view class='songList-play'>
+      <view class='Music-play' bindtap='musicPlay'></view>
+      <view class='play-title'>播放全部
+        <text>(共{{rankList.tracks.length}}首)</text>
+      </view>
+    </view>
+    <view class='songItem' wx:for="{{rankList.tracks}}">
+      <view bindtap='goPlayer'data-id="{{item.id}}" data-name="{{item.name}}" data-img="{{item.album.picUrl}}" data-artists="{{item.artists[0].name}}" data-blur="{{item.album.blurPicUrl}}"  data-song="{{item}}">
+
+        <view class='songItem-index'>
+          {{index+1}}
+        </view>
+        <view class='songItem-count'>
+          <view class='songItem-count-name'>
+            {{item.name}}
+          </view>
+          <view class='songItem-count-ar'>
+            {{item.ar[0].name}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

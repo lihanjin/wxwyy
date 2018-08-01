@@ -1,0 +1,44 @@
+/* pages/Searchsong/Searchsong.wxss */
+
+.searchSong {
+  position: relative;
+  border-bottom: 1px solid #e4e4e4;
+  height: 110rpx;
+  margin-left: 120rpx;
+  padding-top: 15rpx;
+}
+.searchSong-artists-warp .searchSong-artists {
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.searchSong-title {
+  color: #36c;
+  font-size: 28rpx;
+}
+
+.searchSong-artists-warp {
+  display: flex;
+  flex-direction: row;
+  color: #999;
+  font-size: 24rpx;
+}
+.searchSong-warp {
+  overflow: auto;
+  height:1270rpx;
+
+}
+.singerImg {
+  position: absolute;
+  width: 95rpx;
+  height: 95rpx;
+  left: -110rpx;
+  top: 10rpx;
+  border-radius: 13rpx;
+}
+
+.searchSong-title-warp {
+  display: flex;
+  flex-direction: column;
+}

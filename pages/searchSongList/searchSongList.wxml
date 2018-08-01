@@ -1,0 +1,16 @@
+<!--pages/Searchsong/Searchsong.wxml-->
+<view class='searchSong-warp'>
+  <view class='searchSong' wx:for="{{searchsong.playlists}}" wx:key="*this">
+    <view bindtap='goSingerDetail' data-id="{{item.id}}">
+      <image src='{{item.coverImgUrl}}' class='singerImg'></image>
+      <view class='searchSong-title-warp'>
+        <view class='searchSong-title'>{{item.name}}</view>
+         <view class='searchSong-artists-warp'>
+        <view class='searchSong-artists' >{{item.trackCount}}首音乐
+          <text> by {{item.creator.nickname}},播放{{item.playCount}}次</text>
+        </view>
+      </view> 
+      </view>
+    </view>
+  </view>
+</view>
