@@ -32,7 +32,7 @@
                   </view>
                 </view>
               </view>
-              <view class='singerList' wx:for="{{letterList}}" id="{{item[0]}}" wx:key="*this">
+              <view class='singerList' wx:for="{{letterList}}" id="{{item[0]}}" wx:key="*this" bindtap='goSingerDetail' data-id='{{item.id}}' >
                 <view class='singerList-letter' wx:if="{{item[1]}}">
                   {{item[0]}}
                 </view>
